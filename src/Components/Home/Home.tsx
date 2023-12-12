@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 export type HomeProps = {
-    firstName: string,
+    firstName?: string,
     lastName?: string
 }
 
