@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export type HomeProps = {
     firstName?: string,
@@ -7,8 +7,6 @@ export type HomeProps = {
 
 export default function Home(props: HomeProps) {
     const [count, setCount] = useState(0);
-    const [name, setName] = useState('');
-
 
     return(
         <>

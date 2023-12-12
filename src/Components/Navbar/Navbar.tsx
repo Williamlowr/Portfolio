@@ -1,6 +1,4 @@
 import { Link, useLocation } from "react-router-dom";
-import { Component } from "react";
-import { TbUserQuestion, TbUserFilled } from "react-icons/tb";
 import {
   IoDocumentAttachOutline,
   IoBriefcaseOutline,
