@@ -1,5 +1,3 @@
-export type AboutProps = {};
-
-export default function About(props: AboutProps) {
+export default function About() {
   return <h1 className="text-3xl font-bold">{`About page in progress`}</h1>;
 }
