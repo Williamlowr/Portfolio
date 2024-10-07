@@ -12,7 +12,7 @@ export default function Home() {
         style={{ backgroundImage: "url('your-hero-background.jpg')" }}
       >
         <div className="text-center">
-          <div className="mb-8">
+          <div className="mb-2">
             <img
               src={profilePicture}
               alt="picture"
@@ -21,10 +21,10 @@ export default function Home() {
             />
           </div>
           <h1 className="text-6xl font-bold text-white sm:text-8xl">
-            Captivating Creativity
+            William Lowrimore
           </h1>
           <p className="mt-4 text-xl text-gray-300 max-w-lg mx-auto">
-            Crafting unique web experiences with modern design and technology.
+            Soon to graduate with a degree in Computer Science; looking to apply my skills to new projects/opportunities.
           </p>
           <a
             href="#learn-more"
@@ -38,44 +38,42 @@ export default function Home() {
       {/* Interactive Section */}
       <div className="py-12" id="learn-more">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Discover Innovation
+          <h2 className="text-4xl font-bold text-white mb-4">
+            What I Offer
           </h2>
           <p className="text-white text-lg mb-6">
-            Explore cutting-edge web technologies and design trends.
+            Why you should consider me for your next project.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Replace these placeholders with actual content or interactive elements */}
             <div className="transform hover:scale-105 transition duration-500 ease-in-out">
               <div className="p-6 shadow-lg rounded-lg bg-gray-50">
                 <h3 className="text-2xl text-gray-800 font-semibold mb-3">
-                  Responsive Design
+                  Creative Perspective
                 </h3>
                 <p className="text-gray-800">
-                  Creating fluid and adaptable interfaces for a seamless user
-                  experience on any device.
+                  Whether it be looking at a problem under a new light, or trying to iron out final design details
                 </p>
               </div>
             </div>
             <div className="transform hover:scale-105 transition duration-500 ease-in-out">
               <div className="p-6 shadow-lg rounded-lg bg-gray-50">
                 <h3 className="text-2xl font-semibold mb-3 text-gray-800">
-                  Creative Coding
+                  Valuable Experience
                 </h3>
                 <p className="text-gray-800">
-                  Blending art and technology to build visually stunning and
-                  interactive websites.
+                  Through my education and personal projects, I have been exposed to many facets of development
                 </p>
               </div>
             </div>
             <div className="transform hover:scale-105 transition duration-500 ease-in-out">
               <div className="p-6 shadow-lg rounded-lg bg-gray-50">
                 <h3 className="text-2xl text-gray-800 font-semibold mb-3">
-                  Modern Technologies
+                  Modern Design
                 </h3>
                 <p className="text-gray-800">
-                  Utilizing the latest tools and frameworks to deliver
-                  high-performance web applications.
+                  Utilizing the latest tools to deliver
+                  high-performance applications; up-to-date with latest industry standards
                 </p>
               </div>
             </div>
@@ -93,26 +91,26 @@ export default function Home() {
             <div className="mb-12 w-3/5">
               <TimelineItem
                 title="Started My Journey"
-                description="Began my career in web development."
-                date="2015"
+                description="Changed my major to CS"
+                date="2020"
                 position="right"
               />
               <TimelineItem
-                title="First Major Project"
-                description="Developed a major project for a local business."
-                date="2016"
+                title="Began Web Dev"
+                description="Started learning React/TailwindCSS"
+                date="2022"
                 position="left"
               />
               <TimelineItem
-                title="Professional Growth"
-                description="Joined a renowned tech company and expanded my skills."
-                date="2018"
+                title="Created Personal Site"
+                description="Finally began accumulating my work into a portfolio"
+                date="2024"
                 position="right"
               />
               <TimelineItem
-                title="Current Endeavors"
-                description="Working on innovative projects and exploring new technologies."
-                date="2021"
+                title="2025 and Beyond"
+                description="Begin first internship; graduate in Dec. 2025; enter the field"
+                date="2025"
                 position="left"
               />
             </div>
@@ -127,10 +125,11 @@ export default function Home() {
             My Skills
           </h2>
           <div>
-            <SkillBar skill={"React"} level={90} />
-            <SkillBar skill={"HTML"} level={85} />
-            <SkillBar skill={"JavaScript"} level={85} />
-            <SkillBar skill={"CSS / Tailwind CSS"} level={82} />          
+            <SkillBar skill={"React"} level={92} />
+            <SkillBar skill={"HTML"} level={88} />
+            <SkillBar skill={"JavaScript"} level={88} />
+            <SkillBar skill={"CSS / Tailwind CSS"} level={85} />          
+            <SkillBar skill={"Python"} level={77} />                 
             
           </div>
         </div>
@@ -150,7 +149,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="py-16 bg-white"></div>
+      <div className="py-16 "></div>
     </div>
   );
 }
