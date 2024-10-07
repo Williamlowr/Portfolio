@@ -1,4 +1,3 @@
-import { Button } from "react-bootstrap";
 import resume from "../../assets/ResumeRecent.pdf";
 
 export default function ResumeDownloadPage(): JSX.Element {
