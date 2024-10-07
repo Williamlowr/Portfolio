@@ -16,7 +16,7 @@ export default function Home() {
             <img
               src={profilePicture}
               alt="picture"
-              className="w-16 h-16 rounded-full mx-auto"
+              className="w-22 h-22 rounded-full mx-auto"
               style={{ backgroundImage: "url('profile-picture.jpg')", maxWidth: "160px" }}
             />
           </div>
