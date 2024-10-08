@@ -35,7 +35,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Interactive Section */}
       <div className="py-12" id="learn-more">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-white mb-4">
@@ -45,7 +44,6 @@ export default function Home() {
             Why you should consider me for your next project.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Replace these placeholders with actual content or interactive elements */}
             <div className="transform hover:scale-105 transition duration-500 ease-in-out">
               <div className="p-6 shadow-lg rounded-lg bg-gray-50">
                 <h3 className="text-2xl text-gray-800 font-semibold mb-3">
