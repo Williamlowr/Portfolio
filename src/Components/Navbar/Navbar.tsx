@@ -34,7 +34,7 @@ export default function CustomNavbar() {
   const location = useLocation();
 
   return (
-    <div className="navbar sticky top-0 brightness-95 bg-gradient-to-r from-error via-primary to-error h-12 flex justify-center shadow-[0px_2px_3px_rgba(20,20,20,.8)] shadow-[inset_0px_0px_30px_11px_rgba(0,0,0,.2)]">
+    <div className="navbar sticky top-0 brightness-95 bg-gradient-to-r from-error via-primary to-error h-12 flex justify-center shadow-[0px_2px_3px_rgba(20,20,20,.8)]">
       <div className="w-[1100px]">
         <a href="/" className="text-4xl font-bold text-neutral flex-1 drop-shadow-[2px_4px_3px_rgba(0,0,0,.9)]">
           WL.
