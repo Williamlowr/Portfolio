@@ -7,6 +7,8 @@ export default function About() {
         <p className="text-xl text-white">
           Hello, I'm William Lowrimore, a computer science student based in Tyler, Texas. Right now, I especially enjoy 
           creating interactive web applications, though my interests and niche are still being fully explored.
+
+          This site was made using React and Tailwind featuring reusable components, a clean file structure, and an easily expandable/customizable codebase.
         </p>
         {/* Add more personal details or a story here */}
       </div>
