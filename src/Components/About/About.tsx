@@ -35,13 +35,13 @@ export default function About() {
         </p>
         <a
           href="mailto:lowrwilliam@gmail.com"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          className="hover:bg-white bg-black hover:text-black text-white font-bold py-2 px-4 rounded"
         >
           Email Me
         </a>
         <a
           href="https://www.linkedin.com/in/william-lowrimore/"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 ml-6 px-4 rounded"
+          className="hover:bg-white bg-black hover:text-black text-white font-bold py-2 ml-6 px-4 rounded"
         >
           LinkedIn
         </a>
