@@ -18,16 +18,17 @@
 
 ## Overview
 
-This personal site was made as a portfolio to showcase my website building using React
-<!-- ! Add projects ASAP, expand description and link to them; collapse line
-. You can also find my resume, as well as a repository for various projects. Please make sure to visit and browse [My Projects](). Thanks! -->
+This work-in-progress personal site was made as a portfolio to showcase my website building using React/Tailwind. There, you can also find my resume, and some of my various past projects. Please make sure to visit and browse [My Projects](https://william-lowrimore.com/projects) as well, thanks!
+<!-- ! Add projects ASAP, expand description and link to them; collapse line -->
 
 ## Built With
 
 This project was built using these technologies.
 
 - React.js
+- TailwindCSS
 - VSCode
+- Vercel
 
 <!-- Idk if I used these; I think node is req
 - Node.js
@@ -41,7 +42,7 @@ This project was built using these technologies.
 
 **Multi-Page Layout**
 
-**Styled with React and Css with easy to customize colors**
+**Styled with React and CSS; easy to customize**
 
 **Fully Responsive**
 
@@ -52,4 +53,4 @@ This project was built using these technologies.
 <!-- ### Contact -->
 [![Contact Here](https://img.shields.io/badge/CONTACT-HERE-000000?style=for-the-badge&labelColor=000000&color=FFFFFF&link=https://www.william-lowrimore.com/contact)](https://william-lowrimore.com/about)
 
-Contact me if you'd like to work together on any projects or if you're hiring for positions; currently open to work
+Contact me if you'd like to work together on any projects or if you're hiring for positions; currently open to work!
