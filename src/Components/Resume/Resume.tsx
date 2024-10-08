@@ -24,7 +24,7 @@ export default function ResumeDownloadPage(): JSX.Element {
       <a
         href={resume}
         download="WilliamLowrimore_Resume.pdf"
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        className="hover:bg-white bg-black hover:text-black text-white font-bold py-2 px-4 rounded"
       >
         Download Resume
       </a>
