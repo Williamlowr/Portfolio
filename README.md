@@ -50,6 +50,6 @@ This project was built using these technologies.
 <br/>
 
 <!-- ### Contact -->
-[![Contact Here](https://img.shields.io/badge/CONTACT-HERE-000000?style=for-the-badge&labelColor=000000&color=FFFFFF&link=https://www.william-lowrimore.com/contact)]([https://www.william-lowrimore.com/about](https://william-lowrimore.com/about))
+[![Contact Here](https://img.shields.io/badge/CONTACT-HERE-000000?style=for-the-badge&labelColor=000000&color=FFFFFF&link=https://www.william-lowrimore.com/contact)](https://william-lowrimore.com/about)
 
 Contact me if you'd like to work together on any projects or if you're hiring for positions; currently open to work
