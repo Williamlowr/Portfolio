@@ -23,12 +23,6 @@ export default function Projects() {
       imageUrl: tempSearch,
       projectUrl: "https://github.com/Williamlowr/city-temperature-search",
     },
-    {
-      title: "Sort Algorithms",
-      description: "A collection of sort algorithms that includes insertion, bubble, selection, merge, quick, and heap sort.",
-      imageUrl: sort,
-      projectUrl: "https://github.com/Williamlowr/sort-algorithms",
-    },
     // Add more projects as needed
   ];
 
