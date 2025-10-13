@@ -1,15 +1,14 @@
 import FAQItem from "./FAQItem";
 import SkillBar from "./SkillBar";
 import TimelineItem from "./TimelineItem";
-import profilePicture from '../../assets/profilepicture.jpg';
+import profilePicture from "../../assets/profilepicture.jpg";
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
       <div
-        className="h-screen flex items-center justify-center bg-fixed bg-cover bg-center"
-        style={{ backgroundImage: "url('your-hero-background.jpg')" }}
+        className="h-screen flex items-center justify-center bg-fixed bg-cover bg-center pb-[330px]"
       >
         <div className="text-center">
           <div className="mb-2">
@@ -17,14 +16,18 @@ export default function Home() {
               src={profilePicture}
               alt="picture"
               className="w-22 h-22 rounded-full mx-auto"
-              style={{ backgroundImage: "url('profile-picture.jpg')", maxWidth: "160px" }}
+              style={{
+                backgroundImage: "url('profile-picture.jpg')",
+                maxWidth: "160px",
+              }}
             />
           </div>
           <h1 className="text-6xl font-bold text-white sm:text-8xl">
             William Lowrimore
           </h1>
           <p className="mt-4 text-xl text-gray-300 max-w-lg mx-auto">
-            Soon to graduate with a degree in Computer Science; looking to apply my skills to new projects/opportunities.
+            Soon to graduate with a degree in Computer Science; looking to apply
+            my skills to new projects/opportunities.
           </p>
           <a
             href="#learn-more"
@@ -37,9 +40,7 @@ export default function Home() {
 
       <div className="py-12" id="learn-more">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-white mb-4">
-            What I Offer
-          </h2>
+          <h2 className="text-4xl font-bold text-white mb-4">What I Offer</h2>
           <p className="text-white text-lg mb-6">
             Why you should consider me for your next project.
           </p>
@@ -50,7 +51,8 @@ export default function Home() {
                   Creative Perspective
                 </h3>
                 <p className="text-gray-800">
-                  Whether it be looking at a problem under a new light, or trying to iron out final design details
+                  Whether it be looking at a problem under a new light, or
+                  trying to iron out final design details
                 </p>
               </div>
             </div>
@@ -60,7 +62,8 @@ export default function Home() {
                   Valuable Experience
                 </h3>
                 <p className="text-gray-800">
-                  Through my education and personal projects, I have been exposed to many facets of development
+                  Through my education and personal projects, I have been
+                  exposed to many facets of development
                 </p>
               </div>
             </div>
@@ -70,8 +73,8 @@ export default function Home() {
                   Modern Design
                 </h3>
                 <p className="text-gray-800">
-                  Utilizing the latest tools to deliver
-                  high-performance applications; up-to-date with latest industry standards
+                  Utilizing the latest tools to deliver high-performance
+                  applications; up-to-date with latest industry standards
                 </p>
               </div>
             </div>
@@ -126,9 +129,8 @@ export default function Home() {
             <SkillBar skill={"React"} level={92} />
             <SkillBar skill={"HTML"} level={88} />
             <SkillBar skill={"JavaScript"} level={88} />
-            <SkillBar skill={"CSS / Tailwind CSS"} level={85} />          
-            <SkillBar skill={"Python"} level={77} />                 
-            
+            <SkillBar skill={"CSS / Tailwind CSS"} level={85} />
+            <SkillBar skill={"Python"} level={77} />
           </div>
         </div>
       </div>

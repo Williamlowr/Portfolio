@@ -30,19 +30,23 @@ const menuItems = [
 
 
 
-export default function CustomNavbar() {
+export default function Navbar() {
   const location = useLocation();
 
   return (
     <div className="navbar sticky top-0 brightness-95 bg-gradient-to-r from-error via-primary to-error h-12 flex justify-center shadow-[0px_2px_3px_rgba(20,20,20,.8)]">
       <div className="w-[1100px]">
+        {/* Logo, Left Side */}
         <a href="/" className="text-4xl font-bold text-neutral flex-1 drop-shadow-[2px_4px_3px_rgba(0,0,0,.9)]">
           WL.
         </a>
+        {/* Menu Items, Right Side */}
         <div className="flex">
           {menuItems.map((item, index) => (
             <Link to={item.path} key={index} className="flex pl-3">
+              {/* Animated Bar Underline */}
               <section className="flex items-center before:shadow-[2px_3px_4px_rgba(0,0,0,.7)] before:rounded-xl hover:before:scale-x-100 hover:before:origin-left relative before:w-full before:h-[3px] before:origin-right before:transition-transform before:duration-[375ms] before:scale-x-0 before:bg-accent before:absolute before:-bottom-[3px]">
+                {/* Tab Icon Styling (if selected) */}
                 <div
                   className={`text-xl text-neutral pr-1.5  ${
                     item.path === location.pathname
@@ -52,6 +56,7 @@ export default function CustomNavbar() {
                 >
                   {item.icon[item.path === location.pathname ? 1 : 0]}
                 </div>
+                {/* Tab Name Styling (if selected) */}
                 <div
                   className={`text-xl font-sans font-semibold text-neutral ${
                     item.path === location.pathname
@@ -62,6 +67,7 @@ export default function CustomNavbar() {
                   {item.name}
                 </div>
               </section>
+              {/* Separator lines */}
               {index !== menuItems.length - 1 && (
                 <div className="flex items-center pl-3">
                   <div className="inline-block rounded-xl h-[25px] w-[3px] bg-accent shadow-[2px_3px_4px_rgba(0,0,0,.7)]"></div>
