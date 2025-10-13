@@ -30,11 +30,6 @@ This project was built using these technologies.
 - VSCode
 - Vercel
 
-<!-- Idk if I used these; I think node is req
-- Node.js
-- Express.js
-- CSS3 -->
-
 <!-- todo:put hosting website/service here (github/whatever) 
 - Vercel -->
 
