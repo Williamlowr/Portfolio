@@ -7,11 +7,10 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
-      <div
-        className="h-screen flex items-center justify-center bg-fixed bg-cover bg-center pb-[330px]"
-      >
+      <div className="h-screen flex items-center justify-center bg-fixed bg-cover bg-center pb-[330px]">
         <div className="text-center">
           <div className="mb-2">
+            {/* Profile Picture */}
             <img
               src={profilePicture}
               alt="picture"
@@ -22,59 +21,56 @@ export default function Home() {
               }}
             />
           </div>
-          <h1 className="text-6xl font-bold text-white sm:text-8xl">
+          {/* Name and Intro */}
+          <h1 className=" font-bold text-white text-6xl">
             William Lowrimore
           </h1>
-          <p className="mt-4 text-xl text-gray-300 max-w-lg mx-auto">
-            Soon to graduate with a degree in Computer Science; looking to apply
-            my skills to new projects/opportunities.
+          <p className="mt-5 text-xl text-gray-200 max-w-lg mx-auto">
+            Newly graduated with a degree in Computer Science; looking to apply my skills to new projects/opportunities.
           </p>
           <a
             href="#learn-more"
-            className="mt-8 inline-block hover:bg-white bg-black hover:text-black text-white font-bold py-3 px-6 rounded-full text-lg transition duration-300 ease-in-out"
+            className="mt-6 inline-block hover:bg-white bg-black hover:text-black text-white font-bold py-3 px-6 rounded-full text-md transition duration-300 ease-in-out"
           >
             Learn More
           </a>
         </div>
       </div>
-
+      {/* Jump to here */}
       <div className="py-12" id="learn-more">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-white mb-4">What I Offer</h2>
+        <div className="max-w-8xl mx-auto px-1 text-center">
+          <h2 className="text-4xl font-bold text-white mb-4">What to Expect from This Site</h2>
           <p className="text-white text-lg mb-6">
-            Why you should consider me for your next project.
+            A guide to understanding this portfolio:
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-3 gap-6">
             <div className="transform hover:scale-105 transition duration-500 ease-in-out">
               <div className="p-6 shadow-lg rounded-lg bg-gray-50">
                 <h3 className="text-2xl text-gray-800 font-semibold mb-3">
-                  Creative Perspective
+                  Over-Engineered Features
                 </h3>
                 <p className="text-gray-800">
-                  Whether it be looking at a problem under a new light, or
-                  trying to iron out final design details
+                  I understand if this site has some features that seem forced in just to show that I can; that's certainly the idea. Please understand that this is meant to show that I can help implement any features you need to make your project come to life exactly as you envisioned.
                 </p>
               </div>
             </div>
             <div className="transform hover:scale-105 transition duration-500 ease-in-out">
               <div className="p-6 shadow-lg rounded-lg bg-gray-50">
                 <h3 className="text-2xl font-semibold mb-3 text-gray-800">
-                  Valuable Experience
+                  Subjective Graphical Choices
                 </h3>
                 <p className="text-gray-800">
-                  Through my education and personal projects, I have been
-                  exposed to many facets of development
+                  This site may not align with your personal design preferences; I encourage you to visit this section of the site (WIP) to explore your own design preferences applied to my portfolio to demonstrate my ability to adapt to different design styles.
                 </p>
               </div>
             </div>
             <div className="transform hover:scale-105 transition duration-500 ease-in-out">
               <div className="p-6 shadow-lg rounded-lg bg-gray-50">
                 <h3 className="text-2xl text-gray-800 font-semibold mb-3">
-                  Modern Design
+                  Projects Section
                 </h3>
                 <p className="text-gray-800">
-                  Utilizing the latest tools to deliver high-performance
-                  applications; up-to-date with latest industry standards
+                  The projects tab is a constant work in progress (with a backlog of completed projects to add), but here you can expect to see a growing catalogue that includes anything from fun demonstrations, commissioned projects, and a few mini showcases that show my understanding of CS fundamentals.
                 </p>
               </div>
             </div>
@@ -94,25 +90,29 @@ export default function Home() {
                 title="Started My Journey"
                 description="Changed my major to CS"
                 date="2020"
-                position="right"
+                position="left"
+                connect="right"
               />
               <TimelineItem
                 title="Began Web Dev"
                 description="Started learning React/TailwindCSS"
                 date="2022"
-                position="left"
+                position="right"
+                connect="left"
               />
               <TimelineItem
                 title="Created Personal Site"
-                description="Finally began accumulating my work into a portfolio"
+                description="Finally began accumulating my work into this portfolio"
                 date="2024"
-                position="right"
+                position="left"
+                connect="right"
               />
               <TimelineItem
                 title="2025 and Beyond"
-                description="Begin first internship; graduate in Dec. 2025; enter the field"
+                description="Graduated in Dec. 2025; entered the field"
                 date="2025"
-                position="left"
+                position="right"
+                connect={null}
               />
             </div>
           </div>
