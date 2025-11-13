@@ -9,6 +9,7 @@ import {
 } from "react-icons/io5";
 import { FaRegUserCircle, FaUserCircle } from "react-icons/fa";
 
+// Menu items with icons
 const menuItems = [
   { name: "Home", path: "/", icon: [<IoHomeOutline />, <IoHomeSharp />] },
   {
@@ -54,6 +55,7 @@ export default function Navbar() {
                       : "opacity-60 drop-shadow-[2px_4px_2px_rgba(0,0,0,.9)]"
                   }`}
                 >
+                  {/* Show filled icon only when selected */}
                   {item.icon[item.path === location.pathname ? 1 : 0]}
                 </div>
                 {/* Tab Name Styling (if selected) */}
