@@ -24,8 +24,8 @@ export default function About() {
         </h3>
         <p className="text-xl text-white">
           With a degree in CS, a range of projects in the field already, and
-          extensive experience insurance adjusting during school, I feel I bring
-          a lot of unique skills and experience to the table. Additionally, I grind leetcode problems in python to round out my programming skills beyond front-end development.
+          extensive experience insurance adjusting during school, I'm confident I bring
+          a lot of unique skills and experience to the table. Additionally, I prefer solving leetcode problems in Python to round out my programming skills beyond front-end development.
         </p>
         <p className="text-xl text-white mt-2">
           My projects range from this site, to a commissioned location-based web
