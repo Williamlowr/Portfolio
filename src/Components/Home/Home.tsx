@@ -47,7 +47,7 @@ export default function Home() {
             <div className="transform hover:scale-105 transition duration-500 ease-in-out">
               <div className="p-6 shadow-lg rounded-lg bg-gray-50">
                 <h3 className="text-2xl text-gray-800 font-semibold mb-3">
-                  Over-Engineered Features
+                  Showcased Features
                 </h3>
                 <p className="text-gray-800">
                   I understand if this site has some features that seem forced in just to show that I can; that's certainly the idea. Please understand that this is meant to show that I can help implement any features you need to make your project come to life exactly as you envisioned.
