@@ -3,13 +3,13 @@ import { DemoObject } from "./types";
 // Demo project data
 export const DEMO_ITEMS: DemoObject[] = [
   {
-    id: "java-server-client",
-    title: "Java Server Client",
-    description: "A basic project I made showcasing knowledge and ability to create basic TCP servers in Java.",
-    site: "codesandbox",
-    url: "https://codesandbox.io/embed/ywrlc5?view=preview&hidedevtools=1&hidenavigation=1",
-    sourceUrl: "https://github.com/Williamlowr/client-server-java",
-    tags: ["java", "server", "tcp", "showcase", "networking"],
+    id: "sort-algorithm-visualizer",
+    title: "Sort Algorithm Visualizer",
+    description: "A web app to visualize sorting algorithms; part of my fundamentals series.",
+    site: "generic",
+    url: "https://sort-algorithms-jslwdiode-ws-projects-7d34bda7.vercel.app/",
+    sourceUrl: "https://github.com/Williamlowr/sort-algorithms",
+    tags: ["javascript", "sorts", "algorithms", "fundamentals"],
   },
   // {
   //   id: "ui-codepen",

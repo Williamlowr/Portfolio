@@ -8,9 +8,10 @@ type Message = {
 };
 
 export default function Chatbot() {
-    // State for chat open/close, input text, and messages
+  // State for chat open/close, input text, and messages
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
+  const [closedManually, setClosedManually] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     // Render initial bot message
     {
@@ -23,15 +24,26 @@ export default function Chatbot() {
   // Ref for scrolling to bottom
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
+  // Auto open chat after 1.5 seconds unless closed manually
+  useEffect(() => {
+    if (closedManually) return;
+
+    const timer = setTimeout(() => {
+      setOpen(true);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, [closedManually]);
+
+  const closeChat = () => {
+    setOpen(false);
+    setClosedManually(true); // prevents future auto-open
+  };
+
   // Scroll to bottom when messages change or chat opens
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, open]);
-
-  // Toggle chat open/close
-  function handleToggle() {
-    setOpen((prev) => !prev);
-  }
 
   // Handle sending a message
   function handleSend(e: FormEvent) {
@@ -68,7 +80,7 @@ export default function Chatbot() {
       {/* Floating toggle button */}
       <button
         type="button"
-        onClick={handleToggle}
+        onClick={open ? closeChat : () => setOpen(true)}
         className="fixed bottom-9 right-9 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-slate-400 text-zinc-800 shadow-xl hover:bg-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-300"
         aria-label={open ? "Close chat" : "Open chat"}
       >
@@ -84,13 +96,11 @@ export default function Chatbot() {
               <span className="text-sm font-semibold text-zinc-100">
                 Demo Chatbot
               </span>
-              <span className="text-xs text-zinc-400">
-                Portfolio assistant
-              </span>
+              <span className="text-xs text-zinc-400">Portfolio assistant</span>
             </div>
             <button
               type="button"
-              onClick={handleToggle}
+              onClick={closeChat}
               className="rounded-full px-2 py-1 text-xs bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-zinc-100"
             >
               Close
@@ -110,8 +120,8 @@ export default function Chatbot() {
                 <div
                   className={`rounded-2xl px-3 py-2 max-w-[80%] ${
                     m.from === "user"
-                    // Style messages based on sender
-                      ? "bg-zinc-400 text-slate-900 rounded-br-sm"
+                      ? // Style messages based on sender
+                        "bg-zinc-400 text-slate-900 rounded-br-sm"
                       : "bg-zinc-800 text-zinc-100 rounded-bl-sm"
                   }`}
                 >
@@ -124,7 +134,10 @@ export default function Chatbot() {
           </div>
 
           {/* Input */}
-          <form onSubmit={handleSend} className="flex items-center gap-2 border-t border-zinc-600 px-2 py-2">
+          <form
+            onSubmit={handleSend}
+            className="flex items-center gap-2 border-t border-zinc-600 px-2 py-2"
+          >
             <input
               type="text"
               value={input}
