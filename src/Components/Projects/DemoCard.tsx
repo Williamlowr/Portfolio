@@ -16,18 +16,18 @@ const DemoCard: React.FC<{
       <div className="relative">
         <div className="aspect-video bg-zinc-800 overflow-visible">
           {/* Live embedded iframe */}
-          <iframe
-            title={item.title}
-            src={embedUrl}
-            // Essential for performance; only load demo when in viewport
-            loading="lazy"
-            // Allow embed permissions
-            allow="clipboard-read; clipboard-write; fullscreen; geolocation"
-            allowFullScreen
-            className="w-full h-full pointer-events-none"
-            scrolling="no"
-            sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-          />
+          <div className="absolute -top-6 -left-3 origin-top-left scale-[0.4] w-[300%] h-[300%]">
+            <iframe
+              title={item.title}
+              src={embedUrl}
+              loading="lazy"
+              allow="clipboard-read; clipboard-write; fullscreen; geolocation"
+              allowFullScreen
+              className="w-full h-full pointer-events-none border-0"
+              scrolling="no"
+              sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+            />
+          </div>
         </div>
         {/* Open button */}
         <button
