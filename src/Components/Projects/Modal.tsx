@@ -39,7 +39,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, title, children }) => {
           </button>
         </div>
         <div className="p-0">
-          <div className="aspect-video">{children}</div>
+          <div className="h-[80vh]">{children}</div>
         </div>
       </div>
     </div>
