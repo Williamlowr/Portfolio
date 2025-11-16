@@ -7,7 +7,7 @@ export const DEMO_ITEMS: DemoObject[] = [
     title: "Sort Algorithm Visualizer",
     description: "A web app to visualize sorting algorithms; part of my fundamentals series.",
     site: "generic",
-    url: "https://sort-algorithms-jslwdiode-ws-projects-7d34bda7.vercel.app/",
+    url: "https://sort-algorithms-three.vercel.app/",
     sourceUrl: "https://github.com/Williamlowr/sort-algorithms",
     tags: ["javascript", "sorts", "algorithms", "fundamentals"],
   },
