@@ -11,6 +11,15 @@ export const DEMO_ITEMS: DemoObject[] = [
     sourceUrl: "https://github.com/Williamlowr/sort-algorithms",
     tags: ["javascript", "sorts", "algorithms", "fundamentals"],
   },
+  {
+    id: "Typing-Recorder-JSON",
+    title: "Typing Recorder (JSON)",
+    description: "A small dev tool I made to record your typing inputs and export them as a JSON file with timestamps; done to practice using Python and TKinter GUI. You can click the embed to see a quick video demo, or visit the repository to download the Python script/bundled executable (verified safe with an attached virus check).",
+    site: "generic",
+    url: "https://sort-algorithms-three.vercel.app/",
+    sourceUrl: "https://github.com/Williamlowr/Typing-Recorder-JSON",
+    tags: ["python", "tkinter", "json", "tools"],
+  },
   // {
   //   id: "ui-codepen",
   //   title: "CSS Cards (CodePen)",
