@@ -29,6 +29,15 @@ export const DEMO_ITEMS: DemoObject[] = [
     sourceUrl: "https://github.com/Williamlowr/Typing-Recorder-JSON",
     tags: ["python", "tkinter", "json", "tools"],
   },
+  {
+    id: "city-temperature-search",
+    title: "Global Temperature Search",
+    description: "This simple tool retrieves the minimum and maximum temperatures matching your criteria. Data Set is a huge CSV containing global temperatures between the years 1995 and 2020, often used for programming learning. I originally navigated and searched the files using java, but I rewrote the searching as a node API; original java files are included for demo purposes.",
+    site: "generic",
+    url: "https://city-temperature-search-sigma.vercel.app/",
+    sourceUrl: "https://github.com/Williamlowr/city-temperature-search",
+    tags: ["java", "fundamentals", "api", "tools", "data handling"],
+  },
   // {
   //   id: "ui-codepen",
   //   title: "CSS Cards (CodePen)",
