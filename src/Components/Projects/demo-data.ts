@@ -16,7 +16,7 @@ export const DEMO_ITEMS: DemoObject[] = [
     title: "Race My WPM",
     description: "An interactive typing game that lets you attempt to race a pre-recorded session of my own WPM recorded using my Typing Recorder tool. Built with React and Tailwind. Can you type faster than me?",
     site: "generic",
-    url: "https://race-my-typing-rhmb.vercel.app/",
+    url: "https://race-my-typing.vercel.app/",
     sourceUrl: "https://github.com/Williamlowr/race-my-typing",
     tags: ["react", "games", "typing", "tailwind", "javascript"],
   },
