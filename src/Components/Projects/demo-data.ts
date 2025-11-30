@@ -38,6 +38,26 @@ export const DEMO_ITEMS: DemoObject[] = [
     sourceUrl: "https://github.com/Williamlowr/city-temperature-search",
     tags: ["java", "fundamentals", "api", "tools", "data handling"],
   },
+  {
+    id: "client-server-frontend",
+    title: "TCP Server Demo",
+    description: "This is a simple demo of a TCP client-server application; the server is built using Java and was Dockerized and deployed on Railway (the code for the backend is also available in projects). User uploads a file and the server checks and returns the file size and SHA-256 Hash. The simple next.js frontend will compare the hash of the uploaded file to ensure integrity during transfer.",
+    site: "generic",
+    url: "https://client-server-frontend-gilt.vercel.app/",
+    sourceUrl: "https://github.com/Williamlowr/client-server-frontend",
+    tags: ["next.js", "fundamentals", "server", "tcp", "data handling", "sha256", "docker"
+    ],
+  },
+  {
+    id: "client-server-java",
+    title: "Java Server Backend",
+    description: "This is the backend code for the TCP client-server application; please refer to the 'TCP Server Demo' project for more details.",
+    site: "generic",
+    url: "https://client-server-frontend-gilt.vercel.app/",
+    sourceUrl: "https://github.com/Williamlowr/client-server-java",
+    tags: ["java", "fundamentals", "server", "docker",
+    ],
+  },
   // {
   //   id: "ui-codepen",
   //   title: "CSS Cards (CodePen)",
