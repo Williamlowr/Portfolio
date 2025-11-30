@@ -14,7 +14,7 @@ function App() {
       <Router basename="/">
         <Navbar />
         {/* Background Gradient Circle */}
-        <div className="w-full h-screen flex justify-center bg-[radial-gradient(50%_100%_at_50%_20%,rgba(255,255,255,0.0)_0%,rgba(0,0,0,0.2)_150%)]">
+        <div className="w-full min-h-screen flex justify-center bg-[radial-gradient(50%_100%_at_50%_20%,rgba(255,255,255,0.0)_0%,rgba(0,0,0,0.4)_200%)]">
           <div className="w-[1100px] px-5 pt-5">
             <Routes>
               <Route path="/" element={<Home />} />
