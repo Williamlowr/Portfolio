@@ -45,8 +45,7 @@ export const DEMO_ITEMS: DemoObject[] = [
     site: "generic",
     url: "https://client-server-frontend-gilt.vercel.app/",
     sourceUrl: "https://github.com/Williamlowr/client-server-frontend",
-    tags: ["next.js", "fundamentals", "server", "tcp", "data handling", "sha256", "docker"
-    ],
+    tags: ["next.js", "fundamentals", "server", "tcp", "data handling", "sha256", "docker", "java"],
   },
   // {
   //   id: "ui-codepen",
