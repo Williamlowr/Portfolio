@@ -47,6 +47,15 @@ export const DEMO_ITEMS: DemoObject[] = [
     sourceUrl: "https://github.com/Williamlowr/client-server-frontend",
     tags: ["next.js", "fundamentals", "server", "tcp", "data handling", "sha256", "docker", "java"],
   },
+  {
+    id: "web-gl-demo",
+    title: "Shadow Room (WebGL)",
+    description: "This is a complex WebGL demo that uses graphics programming to render a 3D room with dynamic shadows based on a moving light source. It showcases advanced techniques in WebGL including shaders, lighting models, and transformation matrices. There are interactable controls to control/move the light source and toggle cube rotation or lighting.",
+    site: "generic",
+    url: "https://web-gl-demo-alpha.vercel.app/",
+    sourceUrl: "https://github.com/Williamlowr/WebGL-Demo",
+    tags: ["games", "interactable", "graphics", "webgl", "shaders", "lighting", "3d"],
+  },
   // {
   //   id: "ui-codepen",
   //   title: "CSS Cards (CodePen)",
