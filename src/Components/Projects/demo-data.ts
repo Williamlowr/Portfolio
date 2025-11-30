@@ -48,16 +48,6 @@ export const DEMO_ITEMS: DemoObject[] = [
     tags: ["next.js", "fundamentals", "server", "tcp", "data handling", "sha256", "docker"
     ],
   },
-  {
-    id: "client-server-java",
-    title: "Java Server Backend",
-    description: "This is the backend code for the TCP client-server application; please refer to the 'TCP Server Demo' project for more details.",
-    site: "generic",
-    url: "https://client-server-frontend-gilt.vercel.app/",
-    sourceUrl: "https://github.com/Williamlowr/client-server-java",
-    tags: ["java", "fundamentals", "server", "docker",
-    ],
-  },
   // {
   //   id: "ui-codepen",
   //   title: "CSS Cards (CodePen)",
