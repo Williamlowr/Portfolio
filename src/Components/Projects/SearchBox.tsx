@@ -10,6 +10,7 @@ const SearchBox: React.FC<{ value: string; onChange: (v: string) => void }> = ({
     placeholder="Search demonstrations... for demonstrating search"
     value={value}
     onChange={(e) => onChange(e.target.value)}
+    autoFocus={false}
     className="rounded-xl border border-zinc-700/70 bg-transparent px-3 py-2 text-xs outline-none focus:ring-2 focus:ring-zinc-400/50 w-80"
   />
 );
