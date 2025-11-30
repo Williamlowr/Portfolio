@@ -4,6 +4,8 @@ export type DemoSite = "generic" | "codesandbox" | "codepen" | "observable";
 // Demo object structure
 export type DemoObject = {
   id: string;
+  featured?: boolean;
+  rank: number;
   title: string;
   description?: string;
   // Site as category, for embedding
