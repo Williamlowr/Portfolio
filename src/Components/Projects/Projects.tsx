@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import TagPill from "./TagBar";
 import SearchBox, { EmptyState } from "./SearchBox";
 import { DemoProps, DemoObject } from "./types";
@@ -12,6 +12,24 @@ export default function Projects({ demos = DEMO_ITEMS }: DemoProps) {
   const [activeTag, setActiveTag] = useState<string | null>(null);
   const [modal, setModal] = useState<DemoObject | null>(null);
   const [featuredOpen, setFeaturedOpen] = useState(true);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    
+    const preventScroll = () => {
+      window.scrollTo(0, 0);
+    };
+    const timerId = setTimeout(() => {
+      window.removeEventListener('scroll', preventScroll);
+    }, 2000);
+    
+    window.addEventListener('scroll', preventScroll);
+    
+    return () => {
+      clearTimeout(timerId);
+      window.removeEventListener('scroll', preventScroll);
+    };
+  }, []);
 
   const featured = useMemo(
     () => demos.filter((d) => d.featured).sort((a, b) => a.rank - b.rank),
@@ -45,11 +63,20 @@ export default function Projects({ demos = DEMO_ITEMS }: DemoProps) {
   }, [searchableProjects, query, activeTag]);
 
   return (
-    <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
+    <section 
+      className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6"
+      style={{ overflowAnchor: 'none' }}
+    >
       {featured.length > 0 && (
         <div className="mb-10">
           <div className="flex justify-between items-start w-full py-2">
-            <div className={`${featuredOpen ? "opacity-100" : "opacity-0 h-0 overflow-hidden"} transition-all duration-300`}>
+            <div
+              className={`${
+                featuredOpen
+                  ? "opacity-100"
+                  : "opacity-0 h-0 overflow-hidden"
+              } transition-all duration-300`}
+            >
               <h2 className="text-3xl font-bold text-zinc-100 tracking-tight">
                 Featured Projects
               </h2>
@@ -70,21 +97,21 @@ export default function Projects({ demos = DEMO_ITEMS }: DemoProps) {
             >
               {featuredOpen ? "Hide ▲" : "Show ▼"}
             </button>
-
           </div>
 
           {featuredOpen && (
-            <div className="relative mt-4">
-
-              {/* Carousel container */}
+            <div className="relative mt-2">
               <div
-                className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2 scrollbar-hide"
-                style={{ scrollbarWidth: "none" }}
+                className="
+                  flex gap-4 overflow-x-auto pb-2 scrollbar-hide
+                "
+                style={{ scrollbarWidth: "none", overflowAnchor: "none" }}
               >
                 {featured.map((item) => (
                   <div
                     key={item.id}
-                    className="snap-start flex-none w-[300px]"
+                    className="flex-none w-[300px]"
+                    style={{ overflowAnchor: "none" }}
                   >
                     <DemoCard item={item} onOpen={setModal} />
                   </div>
@@ -95,7 +122,6 @@ export default function Projects({ demos = DEMO_ITEMS }: DemoProps) {
         </div>
       )}
 
-      {/* ==================== REGULAR PROJECTS ==================== */}
       <header className="mb-4">
         <h2 className="text-2xl sm:text-3xl font-bold text-zinc-200 tracking-tight">
           All Demos
@@ -129,11 +155,13 @@ export default function Projects({ demos = DEMO_ITEMS }: DemoProps) {
         </div>
       </div>
 
-      {/* Grid of ALL searchable projects (featured included at end) */}
       {filtered.length === 0 ? (
         <EmptyState />
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
+        <div 
+          className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5"
+          style={{ overflowAnchor: "none" }}
+        >
           {filtered.map((item) => (
             <DemoCard key={item.id} item={item} onOpen={setModal} />
           ))}

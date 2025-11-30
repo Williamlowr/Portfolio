@@ -24,5 +24,5 @@ export type DemoObject = {
 export type DemoProps = {
   heading?: string;
   subheading?: string;
-  demos: DemoObject[];
+  demos?: DemoObject[];
 };
