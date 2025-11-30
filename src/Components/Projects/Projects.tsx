@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react";
 import TagPill from "./TagBar";
-import SearchBox from "./SearchBox";
-import { EmptyState } from "./SearchBox";
+import SearchBox, { EmptyState } from "./SearchBox";
 import { DemoProps, DemoObject } from "./types";
 import { toEmbedUrl, makeTags } from "./helpers";
 import Modal from "./Modal";
@@ -12,12 +11,27 @@ export default function Projects({ demos = DEMO_ITEMS }: DemoProps) {
   const [query, setQuery] = useState("");
   const [activeTag, setActiveTag] = useState<string | null>(null);
   const [modal, setModal] = useState<DemoObject | null>(null);
-  const tags = useMemo(() => makeTags(demos), [demos]);
+  const [featuredOpen, setFeaturedOpen] = useState(true);
 
-  // Filter projects based on search query and active tag
+  const featured = useMemo(
+    () => demos.filter((d) => d.featured).sort((a, b) => a.rank - b.rank),
+    [demos]
+  );
+  const regular = useMemo(
+    () => demos.filter((d) => !d.featured).sort((a, b) => a.rank - b.rank),
+    [demos]
+  );
+
+  const searchableProjects = useMemo(
+    () => [...regular, ...featured],
+    [regular, featured]
+  );
+
+  const tags = useMemo(() => makeTags(searchableProjects), [searchableProjects]);
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return demos.filter((d) => {
+    return searchableProjects.filter((d) => {
       const tagMatch = !activeTag || d.tags?.includes(activeTag);
       const qMatch =
         !q ||
@@ -28,14 +42,63 @@ export default function Projects({ demos = DEMO_ITEMS }: DemoProps) {
           .includes(q);
       return tagMatch && qMatch;
     });
-  }, [demos, query, activeTag]);
+  }, [searchableProjects, query, activeTag]);
 
-  // Build project page
   return (
     <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
+      {featured.length > 0 && (
+        <div className="mb-10">
+          <div className="flex justify-between items-start w-full py-2">
+            <div className={`${featuredOpen ? "opacity-100" : "opacity-0 h-0 overflow-hidden"} transition-all duration-300`}>
+              <h2 className="text-3xl font-bold text-zinc-100 tracking-tight">
+                Featured Projects
+              </h2>
+              <p className="mt-1 text-zinc-300 dark:text-zinc-400">
+                My hand-picked featured projects.
+              </p>
+            </div>
+
+            <button
+              onClick={() => setFeaturedOpen((x) => !x)}
+              className="
+                ml-4 px-3 py-1.5
+                rounded-lg border border-zinc-700
+                bg-zinc-900/60 hover:bg-zinc-800
+                text-zinc-300 text-sm font-medium
+                transition-colors
+              "
+            >
+              {featuredOpen ? "Hide ▲" : "Show ▼"}
+            </button>
+
+          </div>
+
+          {featuredOpen && (
+            <div className="relative mt-4">
+
+              {/* Carousel container */}
+              <div
+                className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2 scrollbar-hide"
+                style={{ scrollbarWidth: "none" }}
+              >
+                {featured.map((item) => (
+                  <div
+                    key={item.id}
+                    className="snap-start flex-none w-[300px]"
+                  >
+                    <DemoCard item={item} onOpen={setModal} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* ==================== REGULAR PROJECTS ==================== */}
       <header className="mb-4">
         <h2 className="text-2xl sm:text-3xl font-bold text-zinc-200 tracking-tight">
-          Project Demos
+          All Demos
         </h2>
         <p className="mt-1 text-zinc-300 dark:text-zinc-400">
           Interactive, embedded projects.
@@ -65,11 +128,11 @@ export default function Projects({ demos = DEMO_ITEMS }: DemoProps) {
           <SearchBox value={query} onChange={setQuery} />
         </div>
       </div>
+
+      {/* Grid of ALL searchable projects (featured included at end) */}
       {filtered.length === 0 ? (
         <EmptyState />
       ) : (
-
-        // Project grid
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
           {filtered.map((item) => (
             <DemoCard key={item.id} item={item} onOpen={setModal} />
@@ -77,14 +140,14 @@ export default function Projects({ demos = DEMO_ITEMS }: DemoProps) {
         </div>
       )}
 
-      {/* Embedded Modal */}
+      {/* Modal */}
       <Modal open={!!modal} onClose={() => setModal(null)} title={modal?.title}>
         {modal && (
           <iframe
             title={modal.title}
             src={toEmbedUrl(modal.site, modal.url)}
             loading="eager"
-            allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; clipboard-read; clipboard-write;"
+            allow="accelerometer; ambient-light-sensor; camera; encrypted-media; gyroscope; hid; microphone; midi; usb; clipboard-read; clipboard-write;"
             allowFullScreen
             className="w-full h-full"
             sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"

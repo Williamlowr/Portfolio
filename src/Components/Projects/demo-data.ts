@@ -4,6 +4,8 @@ import { DemoObject } from "./types";
 export const DEMO_ITEMS: DemoObject[] = [
   {
     id: "sort-algorithm-visualizer",
+    featured: true,
+    rank: 3,
     title: "Sort Algorithm Visualizer",
     description: "A web app to visualize sorting algorithms; part of my fundamentals series.",
     site: "generic",
@@ -13,6 +15,8 @@ export const DEMO_ITEMS: DemoObject[] = [
   },
   {
     id: "race-my-WPM",
+    featured: true,
+    rank: 1,
     title: "Race My WPM",
     description: "An interactive typing game that lets you attempt to race a pre-recorded session of my own WPM recorded using my Typing Recorder tool. Built with React and Tailwind. Can you type faster than me?",
     site: "generic",
@@ -22,6 +26,8 @@ export const DEMO_ITEMS: DemoObject[] = [
   },
   {
     id: "web-gl-demo",
+    featured: true,
+    rank: 2,
     title: "Shadow Room (WebGL)",
     description: "This is a complex WebGL demo that uses graphics programming to render a 3D room with dynamic shadows based on a moving light source. It showcases advanced techniques in WebGL including shaders, lighting models, and transformation matrices. There are interactable controls to control/move the light source and toggle cube rotation or lighting.",
     site: "generic",
@@ -31,6 +37,8 @@ export const DEMO_ITEMS: DemoObject[] = [
   },
   {
     id: "city-temperature-search",
+    featured: false,
+    rank: 1,
     title: "Global Temperature Search",
     description: "This simple tool retrieves the minimum and maximum temperatures matching your criteria. Data Set is a huge CSV containing global temperatures between the years 1995 and 2020, often used for programming learning. I originally navigated and searched the files using java, but I rewrote the searching as a node API; original java files are included for demo purposes.",
     site: "generic",
@@ -40,6 +48,8 @@ export const DEMO_ITEMS: DemoObject[] = [
   },
   {
     id: "client-server-frontend",
+    featured: false,
+    rank: 2,
     title: "TCP Server Demo",
     description: "This is a simple demo of a TCP client-server application; the server is built using Java and was Dockerized and deployed on Railway (the code for the backend is also available in projects). User uploads a file and the server checks and returns the file size and SHA-256 Hash. The simple next.js frontend will compare the hash of the uploaded file to ensure integrity during transfer.",
     site: "generic",
@@ -49,6 +59,8 @@ export const DEMO_ITEMS: DemoObject[] = [
   },
   {
     id: "Typing-Recorder-JSON",
+    featured: false,
+    rank: 3,
     title: "Typing Recorder (JSON)",
     description: "A small dev tool I made to record your typing inputs and export them as a JSON file with timestamps; done to practice using Python and TKinter GUI. You can click the embed to see a quick video demo, or visit the repository to download the Python script/bundled executable (verified safe with an attached virus check).",
     site: "generic",
