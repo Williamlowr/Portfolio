@@ -64,7 +64,7 @@ export const DEMO_ITEMS: DemoObject[] = [
     title: "Typing Recorder (JSON)",
     description: "A small dev tool I made to record your typing inputs and export them as a JSON file with timestamps; done to practice using Python and TKinter GUI. You can click the embed to see a quick video demo, or visit the repository to download the Python script/bundled executable (verified safe with an attached virus check).",
     site: "generic",
-    url: "https://github.com/Williamlowr/Typing-Recorder-JSON",
+    url: "https://www.loom.com/embed/432aa4ca8a94424e9b34a5b16f46bf59",
     sourceUrl: "https://github.com/Williamlowr/Typing-Recorder-JSON",
     tags: ["python", "tkinter", "json", "tools"],
   },
