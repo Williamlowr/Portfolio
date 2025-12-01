@@ -21,7 +21,7 @@ export default function Projects({ demos = DEMO_ITEMS }: DemoProps) {
     };
     const timerId = setTimeout(() => {
       window.removeEventListener('scroll', preventScroll);
-    }, 2000);
+    }, 1000);
     
     window.addEventListener('scroll', preventScroll);
     
