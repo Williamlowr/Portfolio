@@ -13,24 +13,6 @@ export default function Projects({ demos = DEMO_ITEMS }: DemoProps) {
   const [modal, setModal] = useState<DemoObject | null>(null);
   const [featuredOpen, setFeaturedOpen] = useState(true);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    
-    const preventScroll = () => {
-      window.scrollTo(0, 0);
-    };
-    const timerId = setTimeout(() => {
-      window.removeEventListener('scroll', preventScroll);
-    }, 1000);
-    
-    window.addEventListener('scroll', preventScroll);
-    
-    return () => {
-      clearTimeout(timerId);
-      window.removeEventListener('scroll', preventScroll);
-    };
-  }, []);
-
   const featured = useMemo(
     () => demos.filter((d) => d.featured).sort((a, b) => a.rank - b.rank),
     [demos]
