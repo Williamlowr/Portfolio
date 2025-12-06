@@ -1,4 +1,4 @@
-import resume from "../../assets/ResumeRecent.pdf";
+import resume from "../../assets/ResumeLowrimore.pdf";
 import profilepicture from "../../assets/profilepicture.jpg";
 
 export default function ResumeDownloadPage(): JSX.Element {
