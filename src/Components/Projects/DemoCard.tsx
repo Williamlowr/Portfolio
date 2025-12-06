@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { DemoObject } from "./types";
 import { toEmbedUrl } from "./helpers";
 
@@ -8,9 +8,37 @@ const DemoCard: React.FC<{
   onOpen?: (item: DemoObject) => void;
 }> = ({ item, onOpen }) => {
   const embedUrl = toEmbedUrl(item.site, item.url);
-  
+
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+
+        if (entry.intersectionRatio >= 0.25) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: [0, 0.25, 1],
+      }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
   return (
     <div
+      ref={ref}
       className="group rounded-2xl border border-zinc-900 overflow-hidden shadow-sm hover:shadow-md hover:border-zinc-700 hover:bg-zinc-900/40 bg-zinc-900/50 backdrop-blur cursor-pointer transition-all"
       onClick={() => onOpen?.(item)}
     >
@@ -18,31 +46,33 @@ const DemoCard: React.FC<{
         {/* Fixed aspect ratio container */}
         <div className="aspect-video relative overflow-hidden">
           {/* Scaled iframe wrapper with better positioning */}
-          <div 
+          <div
             className="absolute inset-0 flex items-start justify-start"
             style={{
-              transform: 'scale(0.35)',
-              transformOrigin: 'top left',
-              width: '285.7%', // 100% / 0.35
-              height: '285.7%'
+              transform: "scale(0.35)",
+              transformOrigin: "top left",
+              width: "285.7%",
+              height: "285.7%",
             }}
           >
-            <iframe
-              title={item.title}
-              src={embedUrl}
-              loading="lazy"
-              allow="clipboard-read; clipboard-write; fullscreen; geolocation"
-              allowFullScreen
-              className="w-full h-full pointer-events-none border-0 bg-white"
-              scrolling="no"
-              sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-            />
+            {isVisible && (
+              <iframe
+                title={item.title}
+                src={embedUrl}
+                loading="lazy"
+                allow="clipboard-read; clipboard-write; fullscreen; geolocation"
+                allowFullScreen
+                className="w-full h-full pointer-events-none border-0 bg-white"
+                scrolling="no"
+                sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+              />
+            )}
           </div>
-          
+
           {/* Gradient overlay for better button visibility */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30 pointer-events-none" />
         </div>
-        
+
         {/* Open button with better visibility */}
         <button
           type="button"
@@ -66,7 +96,7 @@ const DemoCard: React.FC<{
             {item.description}
           </p>
         )}
-        
+
         {/* Tags */}
         <div className="mt-2.5 flex flex-wrap gap-1.5">
           {item.tags?.map((t) => (
@@ -78,7 +108,7 @@ const DemoCard: React.FC<{
             </span>
           ))}
         </div>
-        
+
         {/* Links */}
         <div className="mt-5 mx-10 flex items-end gap-2">
           <a
