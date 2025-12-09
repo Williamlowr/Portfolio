@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { DemoObject } from "./types";
 import { toEmbedUrl } from "./helpers";
 
@@ -22,8 +22,7 @@ const DemoCard: React.FC<{
 
         if (entry.intersectionRatio >= 0.25) {
           setIsVisible(true);
-        }
-        else {
+        } else {
           setIsVisible(false);
         }
       },
@@ -52,7 +51,7 @@ const DemoCard: React.FC<{
             style={{
               transform: "scale(0.35)",
               transformOrigin: "top left",
-              width: "285.7%", // 100% / 0.35
+              width: "285.7%",
               height: "285.7%",
             }}
           >
