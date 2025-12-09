@@ -22,8 +22,6 @@ const DemoCard: React.FC<{
 
         if (entry.intersectionRatio >= 0.25) {
           setIsVisible(true);
-        } else {
-          setIsVisible(false);
         }
       },
       {
