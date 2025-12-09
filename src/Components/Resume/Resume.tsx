@@ -1,4 +1,4 @@
-import resume from "../../assets/ResumeRecent.pdf";
+import resume from "../../assets/William_Lowrimore_Resume.pdf";
 import profilepicture from "../../assets/profilepicture.jpg";
 
 export default function ResumeDownloadPage(): JSX.Element {
@@ -23,7 +23,7 @@ export default function ResumeDownloadPage(): JSX.Element {
       {/* Download Button */}
       <a
         href={resume}
-        download="WilliamLowrimore_Resume.pdf"
+        download="William_Lowrimore_Resume.pdf"
         className="hover:bg-white bg-black hover:text-black text-white font-bold py-2 px-4 rounded"
       >
         Download Resume
