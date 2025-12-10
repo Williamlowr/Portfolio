@@ -1,14 +1,23 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useState, useEffect, lazy, Suspense } from "react";
 import Home from "./Components/Home";
 import Navbar from "./Components/Navbar";
-import About from "./Components/About";
-import Projects from "./Components/Projects";
-import Resume from "./Components/Resume";
-import Chatbot from "./Components/AIChat/Chatbot";
+const About = lazy(() => import("./Components/About"));
+const Projects = lazy(() => import("./Components/Projects"));
+const Resume = lazy(() => import("./Components/Resume"));
+const Chatbot = lazy(() => import("./Components/AIChat/Chatbot.tsx"));
 import Footer from "./Components/Footer";
+import AnalyticsComponent from "./Components/AnalyticsComponent";
 
 function App() {
+  const [loadAnalytics, setLoadAnalytics] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoadAnalytics(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <Router basename="/">
@@ -19,16 +28,21 @@ function App() {
 
           <div className="w-full flex flex-grow justify-center">
             <div className="w-[58vw] px-5 pt-5 pb-6">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/resume" element={<Resume />} />
-                <Route path="*" element={<Home />} />
-              </Routes>
+              <Suspense fallback={<div />}>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/projects" element={<Projects />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/resume" element={<Resume />} />
+                  <Route path="*" element={<Home />} />
+                </Routes>
+              </Suspense>
             </div>
           </div>
-          <Chatbot />
+          <Suspense fallback={null}>
+            <Chatbot />
+          </Suspense>
+          {loadAnalytics && <AnalyticsComponent />}
           <Footer />
         </div>
       </Router>
