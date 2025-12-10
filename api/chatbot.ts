@@ -22,6 +22,7 @@ async function tryModel(model: string, messages: any[]) {
       body: JSON.stringify({
         model,
         messages: [{ role: "system", content: PROMPT }, ...messages],
+        stream: true,
         max_tokens: 300,
       }),
     }
