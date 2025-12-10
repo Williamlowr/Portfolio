@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
-      <div className="h-screen flex items-center justify-center bg-fixed bg-cover bg-center pb-[330px]">
+      <div className="h-screen flex items-start justify-center pt-[184px]">
         <div className="text-center">
           <div className="mb-2">
             {/* Profile Picture */}

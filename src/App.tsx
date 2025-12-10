@@ -12,21 +12,25 @@ function App() {
   return (
     <>
       <Router basename="/">
-        <Navbar />
         {/* Background Gradient Circle */}
-        <div className="w-full min-h-screen flex justify-center bg-[radial-gradient(circle_at_50%_10%,rgba(255,255,255,0.0)_0%,rgba(0,0,0,0.4)_100%)]">
-          <div className="w-[1100px] px-5 pt-5 pb-6">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/resume" element={<Resume />} />
-              <Route path="*" element={<Home />} />
-            </Routes>
+        <div className="fixed inset-0 -z-10 pointer-events-none bg-[radial-gradient(circle_at_50%_35%,rgba(255,255,255,0)_0%,rgba(0,0,0,0.2)_100%)]" />
+        <div className="min-h-screen flex flex-col">
+          <Navbar />
+
+          <div className="w-full flex flex-grow justify-center">
+            <div className="w-[1100px] px-5 pt-5 pb-6">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/resume" element={<Resume />} />
+                <Route path="*" element={<Home />} />
+              </Routes>
+            </div>
           </div>
+          <Chatbot />
+          <Footer />
         </div>
-        <Chatbot />
-        <Footer />
       </Router>
     </>
   );
