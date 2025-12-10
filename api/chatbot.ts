@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { PROMPT } from "./prompt";
+import { PROMPT } from "./prompt.js";
 
 // List of models to try, in order
 const MODELS = [
