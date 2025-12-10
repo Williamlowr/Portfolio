@@ -3,10 +3,10 @@ import { PROMPT } from "./prompt.js";
 
 // List of models to try, in order
 const MODELS = [
-  "tngtech/deepseek-r1t2-chimera:free",
   "openai/gpt-oss-20b:free",
   "google/gemma-3-27b-it:free",
   "mistralai/devstral-2512:free",
+  "tngtech/deepseek-r1t2-chimera:free",
 ];
 
 // Function to attempt a chat completion with a specific model, move on if rate limit/quota error
@@ -21,10 +21,8 @@ async function tryModel(model: string, messages: any[]) {
       },
       body: JSON.stringify({
         model,
-        messages: [
-          { role: "system", content: PROMPT },
-          ...messages,
-        ],
+        messages: [{ role: "system", content: PROMPT }, ...messages],
+        max_tokens: 300,
       }),
     }
   );
