@@ -14,7 +14,8 @@ function App() {
       <Router basename="/">
         <Navbar />
         {/* Background Gradient Circle */}
-        <div className="w-full min-h-screen flex justify-center bg-[radial-gradient(circle_at_50%_10%,rgba(255,255,255,0.0)_0%,rgba(0,0,0,0.4)_100%)]">          <div className="w-[1100px] px-5 pt-5">
+        <div className="w-full min-h-screen flex justify-center bg-[radial-gradient(circle_at_50%_10%,rgba(255,255,255,0.0)_0%,rgba(0,0,0,0.4)_100%)]">
+          <div className="w-[1100px] px-5 pt-5 pb-6">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<Projects />} />
@@ -25,7 +26,7 @@ function App() {
           </div>
         </div>
         <Chatbot />
-       <Footer />
+        <Footer />
       </Router>
     </>
   );

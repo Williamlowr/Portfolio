@@ -3,9 +3,9 @@ import { PROMPT } from "./prompt.js";
 
 // List of models to try, in order
 const MODELS = [
-  "google/gemma-3-27b-it:free",
-  "openai/gpt-oss-20b:free",
   "tngtech/deepseek-r1t2-chimera:free",
+  "openai/gpt-oss-20b:free",
+  "google/gemma-3-27b-it:free",
   "mistralai/devstral-2512:free",
 ];
 

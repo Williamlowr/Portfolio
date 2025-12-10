@@ -23,13 +23,15 @@ export default function Home() {
           </div>
           {/* Name and Intro */}
           <h1 className=" font-bold text-white text-6xl">William Lowrimore</h1>
-          <p className="mt-5 text-xl text-gray-200 max-w-lg mx-auto">
-            Newly graduated with a degree in Computer Science; looking to apply
-            my skills to new projects/opportunities.
+          <p className="mt-3 text-xl text-gray-200 max-w-xl mx-auto">
+            Full-Stack Software Engineer • React, TypeScript, Node.js, Python
+          </p>
+          <p className="mt-1 text-lg text-gray-200 max-w-xl mx-auto">
+            Building Modern Web Apps and Dashboards
           </p>
           <a
             href="#learn-more"
-            className="mt-6 inline-block hover:bg-white bg-black hover:text-black text-white font-bold py-3 px-6 rounded-full text-md transition duration-300 ease-in-out"
+            className="mt-5 inline-block hover:bg-white bg-black hover:text-black text-white font-bold py-3 px-6 rounded-full text-md transition duration-300 ease-in-out"
           >
             Learn More
           </a>
@@ -51,9 +53,8 @@ export default function Home() {
                   Showcased Features
                 </h3>
                 <p className="text-gray-800">
-                  I understand if this site has some features that seem forced
-                  in just to show that I can; that's certainly the idea. Please
-                  understand that this is meant to show that I can help
+                  I understand if this site has some features seem implemented
+                  just to show that I could; that's certainly the idea. This is meant to show that I can help
                   implement any features you need to make your project come to
                   life exactly as you envisioned.
                 </p>
@@ -62,7 +63,7 @@ export default function Home() {
             <div className="transform hover:scale-105 transition duration-500 ease-in-out">
               <div className="p-6 shadow-lg rounded-lg bg-gray-50">
                 <h3 className="text-2xl font-semibold mb-3 text-gray-800">
-                  Subjective Graphical Choices
+                  Subjective Design Choices
                 </h3>
                 <p className="text-gray-800">
                   This site may not align with your personal design preferences;
@@ -78,8 +79,7 @@ export default function Home() {
                   Projects Section
                 </h3>
                 <p className="text-gray-800">
-                  The projects tab is a constant work in progress (with a
-                  backlog of completed projects to add), but here you can expect
+                  <a href="/projects" className="text-indigo-900 underline font-bold">The projects tab</a> is a constant work in progress, but here you can expect
                   to see a growing catalogue that includes anything from fun
                   demonstrations, commissioned projects, and a few mini
                   showcases that show my understanding of CS fundamentals.
