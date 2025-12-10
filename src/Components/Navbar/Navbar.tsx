@@ -56,7 +56,7 @@ export default function Navbar() {
 
   return (
     <div className={`navbar sticky z-50 top-0 brightness-125 bg-gradient-to-r from-error via-primary to-error h-12 flex justify-center shadow-[0px_2px_3px_rgba(20,20,20,.8)] transition-all duration-250 ${hidden ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100" }`}>      
-    <div className="w-[54vw]">
+    <div className="w-[55vw]">
         {/* Logo, Left Side */}
         <Link to="/" className="text-4xl font-bold text-neutral flex-1 drop-shadow-[2px_4px_3px_rgba(0,0,0,.9)]">
           WL.
