@@ -1,11 +1,18 @@
 import { useState, useRef, useEffect, FormEvent } from "react";
 import { sendMessage } from "../AIChat/useChat";
+import { IoClose } from "react-icons/io5";
+import { TbMessageChatbot } from "react-icons/tb";
 
 // Define message structure
 type Message = {
   id: number;
   from: "user" | "bot";
   text: string;
+};
+const INITIAL: Message = {
+  id: 1,
+  from: "bot",
+  text: "Hi! I’m a demo chatbot for made for William's portfolio site. I have been provided the codebase to this site, so hopefully I can answer some questions!",
 };
 
 export default function Chatbot() {
@@ -14,7 +21,7 @@ export default function Chatbot() {
   const [input, setInput] = useState("");
   const [closedManually, setClosedManually] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<Message[]>([INITIAL]);
 
   // Ref for scrolling to bottom
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
@@ -67,22 +74,25 @@ export default function Chatbot() {
     setIsLoading(true);
 
     let botResponse = "";
-    await sendMessage(formatMessagesForChat([...messages, userMessage]), (text) => {
-      botResponse = text;
-      setMessages((prev) => {
-        const updated = [...prev];
-        if (updated[updated.length - 1]?.from === "bot") {
-          updated[updated.length - 1].text = botResponse;
-        } else {
-          updated.push({
-            id: updated.length + 1,
-            from: "bot",
-            text: botResponse,
-          });
-        }
-        return updated;
-      });
-    });
+    await sendMessage(
+      formatMessagesForChat([...messages, userMessage]),
+      (text) => {
+        botResponse = text;
+        setMessages((prev) => {
+          const updated = [...prev];
+          if (updated[updated.length - 1]?.from === "bot") {
+            updated[updated.length - 1].text = botResponse;
+          } else {
+            updated.push({
+              id: updated.length + 1,
+              from: "bot",
+              text: botResponse,
+            });
+          }
+          return updated;
+        });
+      }
+    );
 
     setIsLoading(false);
   };
@@ -96,7 +106,7 @@ export default function Chatbot() {
         className="fixed bottom-9 right-9 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-slate-400 text-zinc-800 shadow-xl hover:bg-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-300"
         aria-label={open ? "Close chat" : "Open chat"}
       >
-        {open ? "✕" : "💬"}
+        {open ? <IoClose size={24} /> : <TbMessageChatbot size={24} />}
       </button>
 
       {/* Chat window */}

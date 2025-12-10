@@ -28,12 +28,22 @@ async function tryModel(model: string, messages: any[]) {
     }
   );
 
-  const data = await response.json();
+  const isError = response.status === 429 || response.status === 402;
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}));
+    return {
+      success: false,
+      stream: null,
+      isError,
+      error: errorData,
+    };
+  }
 
   return {
-    success: response.ok,
+    success: true,
     stream: response.body,
-    isRateLimitOrQuota: response.status === 429 || response.status === 402,
+    isError: false,
   };
 }
 
@@ -78,7 +88,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     // If rate limit or quota error, return error immediately
-    if (!result.isRateLimitOrQuota) {
+    if (!result.isError) {
       return res.status(500).json({ error: "API error", model });
     }
   }
