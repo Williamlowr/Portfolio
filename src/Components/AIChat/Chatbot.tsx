@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect, FormEvent } from "react";
 import { sendMessage } from "../AIChat/useChat";
 import { IoClose } from "react-icons/io5";
-import { TbMessageChatbot } from "react-icons/tb";
+import { IoMdCloseCircle } from "react-icons/io";
+import { FaMessage } from "react-icons/fa6";
 
 // Define message structure
 type Message = {
@@ -106,7 +107,7 @@ export default function Chatbot() {
         className="fixed bottom-9 right-9 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-slate-400 text-zinc-800 shadow-xl hover:bg-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-300"
         aria-label={open ? "Close chat" : "Open chat"}
       >
-        {open ? <IoClose size={24} /> : <TbMessageChatbot size={24} />}
+        {open ? <IoMdCloseCircle size={36} /> : <FaMessage size={22} />}
       </button>
 
       {/* Chat window */}
