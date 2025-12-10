@@ -3,9 +3,9 @@ import { PROMPT } from "./prompt.js";
 
 // List of models to try, in order
 const MODELS = [
-  "tngtech/deepseek-r1t2-chimera:free",
   "google/gemma-3-27b-it:free",
   "openai/gpt-oss-20b:free",
+  "tngtech/deepseek-r1t2-chimera:free",
   "mistralai/devstral-2512:free",
 ];
 
@@ -23,7 +23,6 @@ async function tryModel(model: string, messages: any[]) {
         model,
         messages: [{ role: "system", content: PROMPT }, ...messages],
         stream: true,
-        max_tokens: 300,
       }),
     }
   );
