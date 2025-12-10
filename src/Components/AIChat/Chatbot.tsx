@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, FormEvent } from "react";
+import { sendMessage } from "../AIChat/useChat";
 
 // Define message structure
 type Message = {
@@ -13,14 +14,7 @@ export default function Chatbot() {
   const [input, setInput] = useState("");
   const [closedManually, setClosedManually] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    // Render initial bot message
-    {
-      id: 1,
-      from: "bot",
-      text: "Hi! I’m a demo chatbot for made for William's portfolio site. I have been provided the codebase to this site, so hopefully I can answer some questions!",
-    },
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
 
   // Ref for scrolling to bottom
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
@@ -47,82 +41,51 @@ export default function Chatbot() {
   }, [messages, open]);
 
   function formatMessagesForChat(msgs: Message[]) {
-    return msgs
-      // Exclude initial bot message from context
-      .filter((m) => m.id !== 1)
-      .map((m) => ({
-        role: m.from === "user" ? "user" : "assistant",
-        content: m.text,
-      }));
+    return (
+      msgs
+        // Exclude initial bot message from context
+        .filter((m) => m.id !== 1)
+        .map((m) => ({
+          role: m.from === "user" ? "user" : "assistant",
+          content: m.text,
+        }))
+    );
   }
 
   // Handle sending a message
-  async function handleSend(e: FormEvent) {
-    // Prevent default form submission
+  const handleSend = async (e: FormEvent) => {
     e.preventDefault();
-    // Trim input and check if not empty
-    const text = input.trim();
-    if (!text) return;
+    if (!input.trim()) return;
 
-    // Create user message object
-    const userMsg: Message = {
-      id: Date.now(),
+    const userMessage: Message = {
+      id: messages.length + 1,
       from: "user",
-      text,
+      text: input,
     };
-
-    // Add user message to state and clear input
-    setMessages((prev) => [...prev, userMsg]);
+    setMessages([...messages, userMessage]);
     setInput("");
     setIsLoading(true);
 
-    // Bot response
-    try {
-      // Build conversation history for context
-      const conversationHistory = formatMessagesForChat([...messages, userMsg]);
-      // Call chatbot API
-      const response = await fetch("/api/chatbot", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          messages: conversationHistory,
-        }),
+    let botResponse = "";
+    await sendMessage(formatMessagesForChat([...messages, userMessage]), (text) => {
+      botResponse = text;
+      setMessages((prev) => {
+        const updated = [...prev];
+        if (updated[updated.length - 1]?.from === "bot") {
+          updated[updated.length - 1].text = botResponse;
+        } else {
+          updated.push({
+            id: updated.length + 1,
+            from: "bot",
+            text: botResponse,
+          });
+        }
+        return updated;
       });
-      // Parse response
-      const data = await response.json();
+    });
 
-      // Handle API errors
-      if (!response.ok) {
-        throw new Error(data.error || "Failed to get response");
-      }
-
-      // Extract bot message text
-      const botText =
-        data.choices?.[0]?.message?.content?.trim() ||
-        "Sorry, I didn't get that.";
-
-      const botMsg: Message = {
-        id: Date.now() + 1,
-        from: "bot",
-        text: botText,
-      };
-      setMessages((prev) => [...prev, botMsg]);
-    } catch (error) {
-      console.error("Chat error:", error);
-
-      const errorMsg: Message = {
-        id: Date.now() + 1,
-        from: "bot",
-        text: "Sorry, something went wrong. Please try again.",
-      };
-
-      setMessages((prev) => [...prev, errorMsg]);
-    } finally {
-      setIsLoading(false);
-    }
-  }
+    setIsLoading(false);
+  };
 
   return (
     <>

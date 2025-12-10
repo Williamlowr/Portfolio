@@ -30,13 +30,9 @@ async function tryModel(model: string, messages: any[]) {
   const data = await response.json();
 
   return {
-    success: response.ok && !data.error,
-    data,
-    isRateLimitOrQuota:
-      response.status === 429 ||
-      response.status === 402 ||
-      data.error?.code === "insufficient_quota" ||
-      data.error?.type === "rate_limit_exceeded",
+    success: response.ok,
+    stream: response.body,
+    isRateLimitOrQuota: response.status === 429 || response.status === 402,
   };
 }
 
@@ -55,23 +51,35 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   for (const model of MODELS) {
     const result = await tryModel(model, messages);
     // If successful, return the response
-    if (result.success) {
-      return res.status(200).json({
-        ...result.data,
-      });
+    if (result.success && result.stream) {
+      // Set headers for streaming
+      res.setHeader("Content-Type", "text/event-stream");
+      res.setHeader("Cache-Control", "no-cache");
+      res.setHeader("Connection", "keep-alive");
+
+      // Pipe the stream to response
+      const reader = result.stream.getReader();
+      const decoder = new TextDecoder();
+
+      try {
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          res.write(decoder.decode(value, { stream: true }));
+        }
+        res.end();
+        return;
+      } catch (error) {
+        console.error("Stream error:", error);
+        res.end();
+        return;
+      }
     }
 
     // If rate limit or quota error, return error immediately
     if (!result.isRateLimitOrQuota) {
-      return res.status(500).json({
-        error: "API error",
-        details: result.data,
-        model,
-      });
+      return res.status(500).json({ error: "API error", model });
     }
-
-    // Otherwise, continue to next model
-    console.log(`Model ${model} exhausted, trying next...`);
   }
 
   // All tokens exhausted
