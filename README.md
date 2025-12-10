@@ -18,7 +18,7 @@
 
 ## Overview
 
-This work-in-progress personal site was made as a portfolio to showcase my website building using React/Tailwind. There, you can also find my resume, and some of my various past projects. Please make sure to visit and browse [My Projects](https://william-lowrimore.com/projects) as well, thanks!
+This work-in-progress personal site was made as a portfolio to showcase my website building using React/Tailwind. There, you can also find my resume, and some of my various past projects. Please make sure to visit and browse [My Projects](https://www.william-lowrimore.com/projects) as well, thanks!
 <!-- ! Add projects ASAP, expand description and link to them; collapse line -->
 
 ## Built With
@@ -26,12 +26,11 @@ This work-in-progress personal site was made as a portfolio to showcase my websi
 This project was built using these technologies.
 
 - React.js
+- TypeScript
 - TailwindCSS
-- VSCode
 - Vercel
-
-<!-- todo:put hosting website/service here (github/whatever) 
-- Vercel -->
+- GitHub
+- VSCode
 
 ## Features
 
@@ -46,6 +45,6 @@ This project was built using these technologies.
 <br/>
 
 <!-- ### Contact -->
-[![Contact Here](https://img.shields.io/badge/CONTACT-HERE-000000?style=for-the-badge&labelColor=000000&color=FFFFFF&link=https://www.william-lowrimore.com/contact)](https://william-lowrimore.com/about)
+[![Contact Here](https://img.shields.io/badge/CONTACT-HERE-000000?style=for-the-badge&labelColor=000000&color=FFFFFF&link=https://www.william-lowrimore.com/contact)](https://www.linkedin.com/in/william-lowrimore/)
 
 Contact me if you'd like to work together on any projects or if you're hiring for positions; currently open to work!
