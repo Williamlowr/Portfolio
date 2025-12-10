@@ -5,7 +5,7 @@ import Navbar from "./Components/Navbar";
 import About from "./Components/About";
 import Projects from "./Components/Projects";
 import Resume from "./Components/Resume";
-import Chatbot from "./Components/Chatbot";
+import Chatbot from "./Components/AIChat/Chatbot";
 // import Footer from "./Components/Footer";
 
 function App() {

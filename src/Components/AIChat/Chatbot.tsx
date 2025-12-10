@@ -12,6 +12,7 @@ export default function Chatbot() {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
   const [closedManually, setClosedManually] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     // Render initial bot message
     {
@@ -45,8 +46,18 @@ export default function Chatbot() {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, open]);
 
+  function formatMessagesForChat(msgs: Message[]) {
+    return msgs
+      // Exclude initial bot message from context
+      .filter((m) => m.id !== 1)
+      .map((m) => ({
+        role: m.from === "user" ? "user" : "assistant",
+        content: m.text,
+      }));
+  }
+
   // Handle sending a message
-  function handleSend(e: FormEvent) {
+  async function handleSend(e: FormEvent) {
     // Prevent default form submission
     e.preventDefault();
     // Trim input and check if not empty
@@ -63,16 +74,54 @@ export default function Chatbot() {
     // Add user message to state and clear input
     setMessages((prev) => [...prev, userMsg]);
     setInput("");
+    setIsLoading(true);
 
     // Bot response
-    const botMsg: Message = {
-      id: Date.now() + 1,
-      from: "bot",
-      text: "Thanks for your message! This is a static demo response.",
-    };
-    setTimeout(() => {
+    try {
+      // Build conversation history for context
+      const conversationHistory = formatMessagesForChat([...messages, userMsg]);
+      // Call chatbot API
+      const response = await fetch("/api/chatbot", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          messages: conversationHistory,
+        }),
+      });
+      // Parse response
+      const data = await response.json();
+
+      // Handle API errors
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to get response");
+      }
+
+      // Extract bot message text
+      const botText =
+        data.choices?.[0]?.message?.content?.trim() ||
+        "Sorry, I didn't get that.";
+
+      const botMsg: Message = {
+        id: Date.now() + 1,
+        from: "bot",
+        text: botText,
+      };
       setMessages((prev) => [...prev, botMsg]);
-    }, 400);
+    } catch (error) {
+      console.error("Chat error:", error);
+
+      const errorMsg: Message = {
+        id: Date.now() + 1,
+        from: "bot",
+        text: "Sorry, something went wrong. Please try again.",
+      };
+
+      setMessages((prev) => [...prev, errorMsg]);
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -129,6 +178,28 @@ export default function Chatbot() {
                 </div>
               </div>
             ))}
+            {isLoading && (
+              <div className="flex justify-start">
+                <div className="rounded-2xl rounded-bl-sm bg-zinc-800 px-3 py-2 text-zinc-100">
+                  <span className="inline-flex gap-1">
+                    <span className="animate-bounce">.</span>
+                    <span
+                      className="animate-bounce"
+                      style={{ animationDelay: "0.1s" }}
+                    >
+                      .
+                    </span>
+                    <span
+                      className="animate-bounce"
+                      style={{ animationDelay: "0.2s" }}
+                    >
+                      .
+                    </span>
+                  </span>
+                </div>
+              </div>
+            )}
+
             {/* Dummy div to scroll into view */}
             <div ref={messagesEndRef} />
           </div>
@@ -144,11 +215,12 @@ export default function Chatbot() {
               onChange={(e) => setInput(e.target.value)}
               placeholder="Type your message here..."
               className="flex-1 rounded-xl border border-zinc-200 bg-zinc-900 px-3 py-1.5 text-xs text-zinc-100 outline-none focus:ring-1 focus:ring-zinc-200"
+              disabled={isLoading}
             />
             <button
               type="submit"
               className="rounded-xl bg-slate-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-slate-500 disabled:opacity-40"
-              disabled={!input.trim()}
+              disabled={!input.trim() || isLoading}
             >
               Send
             </button>
