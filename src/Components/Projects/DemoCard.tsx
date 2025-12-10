@@ -37,7 +37,7 @@ const DemoCard: React.FC<{
   return (
     <div
       ref={ref}
-      className="group rounded-2xl border border-zinc-900 overflow-hidden shadow-sm hover:shadow-md hover:border-zinc-700 hover:bg-zinc-900/40 bg-zinc-900/50 backdrop-blur cursor-pointer transition-all"
+      className="group rounded-2xl border border-zinc-700 overflow-hidden shadow-sm hover:shadow-md hover:border-zinc-700 hover:bg-zinc-900/40 bg-zinc-900/50 backdrop-blur cursor-pointer transition-all"
       onClick={() => onOpen?.(item)}
     >
       <div className="relative bg-zinc-800">

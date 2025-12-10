@@ -49,7 +49,9 @@ export default function Projects({ demos = DEMO_ITEMS }: DemoProps) {
       className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6"
       style={{ overflowAnchor: 'none' }}
     >
-      {featured.length > 0 && (
+      
+      {/* Removed Featured Projects Section for now}
+      /* {featured.length > 0 && (
         <div className="mb-10">
           <div className="flex justify-between items-start w-full py-2">
             <div
@@ -102,7 +104,7 @@ export default function Projects({ demos = DEMO_ITEMS }: DemoProps) {
             </div>
           )}
         </div>
-      )}
+      )} */}
 
       <header className="mb-4">
         <h2 className="text-2xl sm:text-3xl font-bold text-zinc-200 tracking-tight">

@@ -6,7 +6,7 @@ import About from "./Components/About";
 import Projects from "./Components/Projects";
 import Resume from "./Components/Resume";
 import Chatbot from "./Components/AIChat/Chatbot";
-// import Footer from "./Components/Footer";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
           </div>
         </div>
         <Chatbot />
-       {/* <Footer /> */}
+       <Footer />
       </Router>
     </>
   );
