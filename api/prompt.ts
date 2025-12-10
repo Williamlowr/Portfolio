@@ -23,8 +23,8 @@ export const PROMPT = `You are William's AI assistant on his portfolio site. Try
 **1. ETTIC Business Dashboard** (React, Node, Postgres, Python)
 Led frontend for nonprofit CRUD app. 11 components + 11 hooks (4,400 lines). Integrated GPT-4o/Gemini for AI data extraction. Python/BS4 scrapers. Refactored 2,000-line component → 800. Top contributor.
 
-**2. This Portfolio** (React, TypeScript, Vite, Tailwind)
-20+ components, 95+ Vercel score, 7 live project demos. AI chatbot with OpenRouter + model fallback (DeepSeek → GPT-OSS → Gemma → Devstral).
+**2. Portfolio** (React, TypeScript, Vite, Tailwind)
+The site this AI bot is on. 20+ components, 95+ Vercel score, 7 live project demos. AI chatbot with OpenRouter + model fallback (DeepSeek → GPT-OSS → Gemma → Devstral).
 
 **3. Race My WPM** (React, Python) — Typing game racing recorded keystrokes. Built Python/Tkinter export tool.
 
