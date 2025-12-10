@@ -22,11 +22,10 @@ export default function Home() {
             />
           </div>
           {/* Name and Intro */}
-          <h1 className=" font-bold text-white text-6xl">
-            William Lowrimore
-          </h1>
+          <h1 className=" font-bold text-white text-6xl">William Lowrimore</h1>
           <p className="mt-5 text-xl text-gray-200 max-w-lg mx-auto">
-            Newly graduated with a degree in Computer Science; looking to apply my skills to new projects/opportunities.
+            Newly graduated with a degree in Computer Science; looking to apply
+            my skills to new projects/opportunities.
           </p>
           <a
             href="#learn-more"
@@ -39,7 +38,9 @@ export default function Home() {
       {/* Jump to here */}
       <div className="py-12" id="learn-more">
         <div className="max-w-8xl mx-auto px-1 text-center">
-          <h2 className="text-4xl font-bold text-white mb-4">What to Expect from This Site</h2>
+          <h2 className="text-4xl font-bold text-white mb-4">
+            What to Expect from This Site
+          </h2>
           <p className="text-white text-lg mb-6">
             A guide to understanding this portfolio:
           </p>
@@ -50,7 +51,11 @@ export default function Home() {
                   Showcased Features
                 </h3>
                 <p className="text-gray-800">
-                  I understand if this site has some features that seem forced in just to show that I can; that's certainly the idea. Please understand that this is meant to show that I can help implement any features you need to make your project come to life exactly as you envisioned.
+                  I understand if this site has some features that seem forced
+                  in just to show that I can; that's certainly the idea. Please
+                  understand that this is meant to show that I can help
+                  implement any features you need to make your project come to
+                  life exactly as you envisioned.
                 </p>
               </div>
             </div>
@@ -60,7 +65,10 @@ export default function Home() {
                   Subjective Graphical Choices
                 </h3>
                 <p className="text-gray-800">
-                  This site may not align with your personal design preferences; I encourage you to visit this section of the site (WIP) to explore your own design preferences applied to my portfolio to demonstrate my ability to adapt to different design styles.
+                  This site may not align with your personal design preferences;
+                  I encourage you to visit this section of the site (WIP) to
+                  explore your own design preferences applied to my portfolio to
+                  demonstrate my ability to adapt to different design styles.
                 </p>
               </div>
             </div>
@@ -70,7 +78,11 @@ export default function Home() {
                   Projects Section
                 </h3>
                 <p className="text-gray-800">
-                  The projects tab is a constant work in progress (with a backlog of completed projects to add), but here you can expect to see a growing catalogue that includes anything from fun demonstrations, commissioned projects, and a few mini showcases that show my understanding of CS fundamentals.
+                  The projects tab is a constant work in progress (with a
+                  backlog of completed projects to add), but here you can expect
+                  to see a growing catalogue that includes anything from fun
+                  demonstrations, commissioned projects, and a few mini
+                  showcases that show my understanding of CS fundamentals.
                 </p>
               </div>
             </div>
@@ -102,16 +114,23 @@ export default function Home() {
               />
               <TimelineItem
                 title="Created Personal Site"
-                description="Finally began accumulating my work into this portfolio"
-                date="2024"
+                description="Created my portfolio site; began adding past/current projects"
+                date="2023"
                 position="left"
                 connect="right"
               />
               <TimelineItem
-                title="2025 and Beyond"
-                description="Graduated in Dec. 2025; entered the field"
+                title="Internship/Graduation"
+                description="Began internship in May; Graduated in Dec"
                 date="2025"
                 position="right"
+                connect="left"
+              />
+              <TimelineItem
+                title="2026 and Beyond"
+                description="Seeking full-stack opportunities to grow as an engineer"
+                date="2026"
+                position="left"
                 connect={null}
               />
             </div>
@@ -126,11 +145,14 @@ export default function Home() {
             My Skills
           </h2>
           <div>
-            <SkillBar skill={"React"} level={92} />
-            <SkillBar skill={"HTML"} level={88} />
-            <SkillBar skill={"JavaScript"} level={88} />
-            <SkillBar skill={"CSS / Tailwind CSS"} level={85} />
-            <SkillBar skill={"Python"} level={77} />
+            <SkillBar skill={"React"} level={94} />
+            <SkillBar skill={"TypeScript"} level={88} />
+            <SkillBar skill={"Git / Version Control"} level={85} />
+            <SkillBar skill={"Node.js"} level={84} />
+            <SkillBar skill={"Python"} level={80} />
+            <SkillBar skill={"Java"} level={76} />
+            <SkillBar skill={"HTML / CSS"} level={75} />
+            <SkillBar skill={"PostgreSQL"} level={70} />
           </div>
         </div>
       </div>
