@@ -18,7 +18,7 @@ function App() {
           <Navbar />
 
           <div className="w-full flex flex-grow justify-center">
-            <div className="w-[1100px] px-5 pt-5 pb-6">
+            <div className="w-[52vw] px-5 pt-5 pb-6">
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/projects" element={<Projects />} />

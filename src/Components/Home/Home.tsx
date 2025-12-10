@@ -39,7 +39,7 @@ export default function Home() {
       </div>
       {/* Jump to here */}
       <div className="py-12" id="learn-more">
-        <div className="max-w-8xl mx-auto px-1 text-center">
+        <div className="max-w-8xl mx-auto px-2 text-center">
           <h2 className="text-4xl font-bold text-white mb-4">
             What to Expect from This Site
           </h2>
