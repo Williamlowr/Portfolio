@@ -11,7 +11,7 @@ export default function Projects({ demos = DEMO_ITEMS }: DemoProps) {
   const [query, setQuery] = useState("");
   const [activeTag, setActiveTag] = useState<string | null>(null);
   const [modal, setModal] = useState<DemoObject | null>(null);
-  const [featuredOpen, setFeaturedOpen] = useState(true);
+  // const [featuredOpen, setFeaturedOpen] = useState(true);
 
   const featured = useMemo(
     () => demos.filter((d) => d.featured).sort((a, b) => a.rank - b.rank),
