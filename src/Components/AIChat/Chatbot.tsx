@@ -12,7 +12,7 @@ type Message = {
 const INITIAL: Message = {
   id: 1,
   from: "bot",
-  text: "Hi! I’m a demo chatbot for made for William's portfolio site. I have been provided the codebase to this site, so hopefully I can answer some questions!",
+  text: "Hi! I’m a demo chatbot made for William's portfolio site. I have been provided the codebase to this site, so hopefully I can answer some questions!",
 };
 
 export default function Chatbot() {
