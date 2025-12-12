@@ -51,11 +51,3 @@ export async function sendMessage(
 
   return fullMessage;
 }
-
-// Usage in your component:
-// 
-// const [response, setResponse] = useState("");
-// 
-// await sendMessage(messages, (text) => {
-//   setResponse(text); // Updates as chunks arrive
-// });
