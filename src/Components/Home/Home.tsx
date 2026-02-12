@@ -24,7 +24,7 @@ export default function Home() {
           {/* Name and Intro */}
           <h1 className=" font-bold text-white text-6xl">William Lowrimore</h1>
           <p className="mt-3 text-xl text-gray-200 max-w-xl mx-auto">
-            Full-Stack Software Engineer • React, TypeScript, Node.js, Python
+            Full-Stack Software Engineer • React, TypeScript, Python, PostgreSQL
           </p>
           <p className="mt-1 text-lg text-gray-200 max-w-xl mx-auto">
             Building Modern Web Apps and Dashboards
@@ -97,7 +97,7 @@ export default function Home() {
             My Journey
           </h2>
           <div className="flex justify-center">
-            <div className="mb-12 w-3/5">
+            <div className="mb-12 w-4/5">
               <TimelineItem
                 title="Started My Journey"
                 description="Changed my major to CS"
@@ -113,24 +113,31 @@ export default function Home() {
                 connect="left"
               />
               <TimelineItem
-                title="Created Personal Site"
-                description="Created my portfolio site; began adding past/current projects"
+                title="Created Portfolio; LLC"
+                description="Created my portfolio site; founded AI Technologies"
                 date="2023"
                 position="left"
                 connect="right"
               />
               <TimelineItem
-                title="Internship/Graduation"
-                description="Began internship in May; Graduated in Dec"
-                date="2025"
+                title="Freelancing"
+                description="Registered Comet Software Solutions as DBA; began solo freelancing"
+                date="2024"
                 position="right"
                 connect="left"
               />
               <TimelineItem
-                title="2026 and Beyond"
-                description="Seeking full-stack opportunities to grow as an engineer"
-                date="2026"
+                title="Graduation"
+                description="Graduated in December"
+                date="2025"
                 position="left"
+                connect="right"
+              />
+              <TimelineItem
+                title="2026 and Beyond"
+                description="Set to release first micro SaaS through ETX Launchpad; seeking full-stack opportunities."
+                date="2026"
+                position="right"
                 connect={null}
               />
             </div>
