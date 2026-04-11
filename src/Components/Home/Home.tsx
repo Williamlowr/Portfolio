@@ -135,7 +135,20 @@ export default function Home() {
               />
               <TimelineItem
                 title="2026 and Beyond"
-                description="Set to release first micro SaaS through ETX Launchpad; seeking full-stack opportunities."
+                description={
+                  <>
+                    Released first SaaS through ETX Launchpad (
+                    <a
+                      href="https://syllabuddy.xyz/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-indigo-700 underline underline-offset-2 hover:text-indigo-900"
+                    >
+                      Syllabuddy.xyz
+                    </a>
+                    ); working on project two; open to full-stack opportunities.
+                  </>
+                }
                 date="2026"
                 position="right"
                 connect={null}

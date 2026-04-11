@@ -3,9 +3,31 @@ import { DemoObject } from "./types";
 // Demo project data
 export const DEMO_ITEMS: DemoObject[] = [
   {
+    id: "syllabuddy",
+    featured: false,
+    rank: 1,
+    title: "Syllabuddy",
+    description:
+      "A syllabus parsing SaaS for students: upload PDFs to build one live semester calendar, merge Canvas and syllabus deadlines, track grades with charts and maximum-possible-grade insight, and keep class profiles handy. Export to Apple or Google Calendar.",
+    site: "generic",
+    url: "https://syllabuddy.xyz/",
+    tags: ["saas", "education", "astro", "webapp"],
+  },
+  {
+    id: "comet-software-studio",
+    featured: false,
+    rank: 2,
+    title: "Comet Software Studio",
+    description:
+      "My freelancing client site and the umbrella brand for SaaS products and ideas.",
+    site: "generic",
+    url: "https://cometsoftware.dev/",
+    tags: ["business", "frontend"],
+  },
+  {
     id: "sort-algorithm-visualizer",
     featured: false,
-    rank: 4,
+    rank: 6,
     title: "Sort Algorithm Visualizer",
     description: "Interactive visualizations of common sorting algorithms, built to reinforce algorithmic fundamentals.",
     site: "generic",
@@ -16,7 +38,7 @@ export const DEMO_ITEMS: DemoObject[] = [
   {
     id: "race-my-WPM",
     featured: false,
-    rank: 1,
+    rank: 3,
     title: "Race My WPM",
     description: "A competitive typing game that lets users race against a recorded high-WPM session in real time.",
     site: "generic",
@@ -27,7 +49,7 @@ export const DEMO_ITEMS: DemoObject[] = [
   {
     id: "web-gl-demo",
     featured: false,
-    rank: 2,
+    rank: 4,
     title: "Shadow Room (WebGL)",
     description: "A 3D WebGL demo featuring real-time lighting, shaders, and interactive scene controls.",
     site: "generic",
@@ -38,7 +60,7 @@ export const DEMO_ITEMS: DemoObject[] = [
   {
     id: "city-temperature-search",
     featured: false,
-    rank: 6,
+    rank: 8,
     title: "Global Temperature Search",
     description: "Searches large historical temperature datasets via a Node API, rewritten from an original Java implementation.",
     site: "generic",
@@ -49,7 +71,7 @@ export const DEMO_ITEMS: DemoObject[] = [
   {
     id: "client-server-frontend",
     featured: false,
-    rank: 5,
+    rank: 7,
     title: "TCP Server Demo",
     description: "A Java TCP server with SHA-256 file verification, paired with a lightweight Next.js frontend.",
     site: "generic",
@@ -60,7 +82,7 @@ export const DEMO_ITEMS: DemoObject[] = [
   {
     id: "lawyer-template",
     featured: false,
-    rank: 3,
+    rank: 5,
     title: "Law Firm Template",
     description: "A responsive React template designed as a starting point for small-business client sites.",
     site: "generic",
@@ -71,7 +93,7 @@ export const DEMO_ITEMS: DemoObject[] = [
   {
     id: "Typing-Recorder-JSON",
     featured: false,
-    rank: 7,
+    rank: 9,
     title: "Typing Recorder (JSON)",
     description: "A Python desktop tool that records keystrokes with timestamps and exports structured JSON data.",
     site: "generic",

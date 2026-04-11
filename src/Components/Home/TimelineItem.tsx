@@ -3,7 +3,7 @@ import React from "react";
 
 interface TimelineItemProps {
   title: string;
-  description: string;
+  description: React.ReactNode;
   date: string;
   position: "left" | "right";
   connect?: "left" | "right" | null;
